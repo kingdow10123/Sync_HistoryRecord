@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 360px;
+}
+
+h1 {
+    color: #F08000;
+}
+
+.date-range input {
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.select-group {
+    margin: 10px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+h2 {
+    color: #F08000;
+    margin-top: 20px;
+}
+
+.chart-wrapper {
+    margin: 20px 0;
+}
+
+button {
+    background-color: #F08000;
+    color: white;
+    padding: 10px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #d96f00;
+}
