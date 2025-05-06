@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Chart, BarElement, CategoryScale, LinearScale } from 'chart.js';
+import { Chart as ChartJS, BarElement, CategoryScale, LinearScale } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import './App.css';
 
-Chart.register(BarElement, CategoryScale, LinearScale);
+// 註冊 Chart.js 元件
+ChartJS.register(BarElement, CategoryScale, LinearScale);
 
 function App() {
   const [startDate, setStartDate] = useState('2024-12-30');
@@ -34,13 +35,13 @@ function App() {
 
       let value;
       if (dataType === '腿圍') {
-        value = getRandom(30, 45);
+        value = getRandom(30, 45); // cm
       } else if (dataType === '體重') {
-        value = getRandom(50, 80);
+        value = getRandom(50, 80); // kg
       } else if (dataType === '血壓') {
-        value = getRandom(110, 140);
+        value = getRandom(110, 140); // mmHg
       } else if (dataType === '心跳') {
-        value = getRandom(60, 100);
+        value = getRandom(60, 100); // bpm
       }
       newData.push(value);
     }
@@ -96,7 +97,11 @@ function App() {
       <h2>今日測量結果</h2>
 
       <div className="chart-wrapper">
-        <Bar data={chartData} options={options} />
+        {labels.length > 0 ? (
+          <Bar data={chartData} options={options} />
+        ) : (
+          <p>請選擇日期區間並點擊查詢</p>
+        )}
       </div>
 
       <button onClick={generateData}>查詢</button>
